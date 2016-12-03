@@ -51,7 +51,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.allSrcJs, ['build']);
 });
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', ['main'], function() {
   return gulp.src(path.join(paths.distDir, '/**/*'))
     .pipe(ghPages());
 });
