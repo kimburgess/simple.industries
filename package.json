@@ -1,0 +1,44 @@
+{
+  "name": "simple.industries",
+  "version": "1.0.0",
+  "main": "dist/js/index.js",
+  "repository": {
+    "url": "git@github.com:KimBurgess/simple.industries.git",
+    "type": "git"
+  },
+  "author": "Kim Burgess <kim@simple.industries>",
+  "license": "MIT",
+  "scripts": {
+    "start": "gulp"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
+    }
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.8",
+    "babel-preset-latest": "^6.16.0",
+    "del": "^2.2.2",
+    "eslint": "^3.11.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-gh-pages": "^0.5.4",
+    "normalize.css": "^5.0.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.16.0"
+  }
+}
