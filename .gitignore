@@ -1,6 +1,7 @@
 node_modules/
 /lib/
-/dist/js/bundle.js*
+/dist/app.js*
+/dist/style.css*
 yarn-error.log
 *.sublime-project
 *.sublime-workspace

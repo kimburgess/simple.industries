@@ -12,10 +12,10 @@ const paths = {
   allSrcJs: 'src/**/*.js',
   allSrcCss: 'src/**/*.?(s)css',
   clientEntryPoint: 'src/app.js',
-  clientBundle: 'dist/js/bundle.js?(.map)',
+  jsBundle: 'dist/js/app.js?(.map)',
+  cssBundle: 'dist/style.css?(.map)',
   gulpFile: 'gulpfile.babel.js',
   webpackFile: 'webpack.config.babel.js',
-  libDir: 'lib/',
   distDir: 'dist/',
 };
 
@@ -31,14 +31,14 @@ gulp.task('lint', () =>
 );
 
 gulp.task('clean', () => del([
-  paths.libDir,
-  paths.clientBundle,
+  paths.jsBundle,
+  paths.cssBundle
 ]));
 
 gulp.task('build', ['lint', 'clean'], () =>
   gulp.src(paths.clientEntryPoint)
     .pipe(webpack(webpackConfig))
-    .pipe(gulp.dest(path.join(paths.distDir, 'js')))
+    .pipe(gulp.dest(paths.distDir))
 );
 
 gulp.task('watch', () => {

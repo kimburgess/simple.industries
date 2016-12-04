@@ -1,6 +1,8 @@
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
 export default {
   output: {
-    filename: 'bundle.js'
+    filename: 'app.js',
   },
   devtool: 'source-map',
   module: {
@@ -12,14 +14,19 @@ export default {
       },
       {
         test: /\.css$/,
-        loaders: ['style-loader', 'css-loader']
+        loader: ExtractTextPlugin.extract('css')
       },
       {
         test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
+        loader: ExtractTextPlugin.extract('css!sass')
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin('style.css', {
+      allChunks: true
+    })
+  ],
   resolve: {
     extensions: ['', '.js']
   }
