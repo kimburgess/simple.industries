@@ -1,0 +1,48 @@
+$font-stack: 'Inconsolata', monospace;
+
+html, body, main {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.presenceLinks {
+   text-align: center;
+
+  li {
+    list-style-type: none;
+    padding: 8% 0;
+    padding: 2vh 0;
+  }
+
+  a {
+    font: 2em $font-stack;
+    font-size: 2.6vw;
+    text-decoration: none;
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    mix-blend-mode: difference;
+  }
+
+}
+
+.presenceLinks:hover {
+
+  a {
+    opacity: 0.5;
+  }
+
+  a:hover {
+    opacity: 1.0;
+  }
+
+}
