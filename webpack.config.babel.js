@@ -1,3 +1,4 @@
+import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
@@ -25,6 +26,9 @@ export default {
   plugins: [
     new ExtractTextPlugin('style.css', {
       allChunks: true
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+        compressor: { warnings: false }
     })
   ],
   resolve: {
