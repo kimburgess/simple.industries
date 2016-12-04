@@ -10,7 +10,7 @@ import webpackConfig from './webpack.config.babel';
 
 const paths = {
   allSrcJs: 'src/**/*.js',
-  allSrcCss: 'src/**/*.css',
+  allSrcCss: 'src/**/*.?(s)css',
   clientEntryPoint: 'src/app.js',
   clientBundle: 'dist/js/bundle.js?(.map)',
   gulpFile: 'gulpfile.babel.js',
