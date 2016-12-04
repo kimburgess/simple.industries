@@ -1,18 +1,22 @@
 export default {
   output: {
-    filename: 'client-bundle.js',
+    filename: 'bundle.js'
   },
   devtool: 'source-map',
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         loader: 'babel-loader',
         exclude: [/node_modules/]
       },
-    ],
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      }
+    ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
+    extensions: ['', '.js']
+  }
 };
