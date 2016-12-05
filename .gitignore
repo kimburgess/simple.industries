@@ -2,6 +2,7 @@ node_modules/
 /lib/
 /dist/app.js*
 /dist/style.css*
+/dist/media/*-original.*
 yarn-error.log
 *.sublime-project
 *.sublime-workspace

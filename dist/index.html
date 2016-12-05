@@ -11,8 +11,6 @@
 
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 
   <script src="app.js" type="text/javascript"></script>
@@ -20,8 +18,13 @@
 </head>
 <body>
 
+  <video playsinline autoplay muted loop id="background">
+    <source src="media/ink-flow.mp4" type="video/mp4">
+    <source src="media/ink-flow.webm" type="video/webm">
+  </video>
+
   <main>
-    <ol class="presenceLinks">
+    <ol id="presence-links">
       <li><a href="https://twitter.com/_______kim">Distractions</a></li>
       <li><a href="https://github.com/kimburgess">Code</a></li>
       <li><a href="https://www.instagram.com/kimburgess">Pixels</a></li>

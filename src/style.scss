@@ -1,48 +1,70 @@
-$font-stack: 'Inconsolata', monospace;
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
-html, body, main {
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
+$font-stack: 'Inconsolata', monospace;
+$back-color: #fff;
+
+body {
+  margin: 0;
+  background: $back-color;
+  background-size: cover;
+}
+
+video#background { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 1s opacity;
 }
 
 main {
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-.presenceLinks {
-   text-align: center;
+#presence-links {
+  text-align: center;
+  padding: 0;
+  font: 2em $font-stack;
+  font-size: 4.6vh;
+  color: #fff;
+  mix-blend-mode: exclusion;
 
   li {
     list-style-type: none;
-    padding: 8% 0;
-    padding: 2vh 0;
+    padding: 8%;
+    padding: 2vh;
+    margin: 0;
   }
 
   a {
-    font: 2em $font-stack;
-    font-size: 2.6vw;
     text-decoration: none;
     color: #fff;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
-    mix-blend-mode: difference;
   }
 
 }
 
-.presenceLinks:hover {
+#presence-links:hover {
 
-  a {
+  li {
     opacity: 0.5;
   }
 
-  a:hover {
+  li:hover {
     opacity: 1.0;
+
+    a {
+      color: #f8b195;
+    }
   }
 
 }
