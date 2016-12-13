@@ -19,16 +19,21 @@ main {
 }
 
 #presence-links {
-  text-align: center;
+  text-align: left;
   padding: 0;
   font: 2em $font-stack;
-  font-size: 4.6vh;
+  font-size: 4.5vh;
 
   li {
     list-style-type: none;
     padding: 8%;
     padding: 2vh;
     margin: 0;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
   }
 
   a {
@@ -38,6 +43,10 @@ main {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
+
+    &:before {
+      content: '/';
+    }
   }
 
 }
