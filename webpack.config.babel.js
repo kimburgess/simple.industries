@@ -1,11 +1,24 @@
+import path from 'path';
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
-  output: {
-    filename: 'app.js',
+
+  entry: {
+    'app': './src/app.js'
   },
+
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+  },
+
+  resolve: {
+    extensions: ['', '.js']
+  },
+
   devtool: 'source-map',
+
   module: {
     loaders: [
       {
@@ -23,6 +36,7 @@ export default {
       }
     ]
   },
+
   plugins: [
     new ExtractTextPlugin('style.css', {
       allChunks: true
@@ -30,8 +44,6 @@ export default {
     new webpack.optimize.UglifyJsPlugin({
         compressor: { warnings: false }
     })
-  ],
-  resolve: {
-    extensions: ['', '.js']
-  }
+  ]
+
 };
