@@ -1,16 +1,20 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 export default {
 
+  context: path.join(__dirname, 'src'),
+
   entry: {
-    'app': './src/app.js'
+    'app': './js/app.js'
   },
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
+    filename: '[name].js'
   },
 
   resolve: {
@@ -28,22 +32,32 @@ export default {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('css')
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
       }
     ]
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.html'
+    }),
+
     new ExtractTextPlugin('style.css', {
       allChunks: true
     }),
+
     new webpack.optimize.UglifyJsPlugin({
         compressor: { warnings: false }
-    })
+    }),
+
+    new CopyWebpackPlugin([
+      { from: 'CNAME' },
+      { from: 'robots.txt' }
+    ])
   ]
 
 };

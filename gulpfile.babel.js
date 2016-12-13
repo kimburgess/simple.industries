@@ -12,8 +12,6 @@ const paths = {
   allSrcJs: 'src/**/*.js',
   allSrcCss: 'src/**/*.?(s)css',
   clientEntryPoint: 'src/app.js',
-  jsBundle: 'dist/js/app.js?(.map)',
-  cssBundle: 'dist/style.css?(.map)',
   gulpFile: 'gulpfile.babel.js',
   webpackFile: 'webpack.config.babel.js',
   distDir: 'dist/',
@@ -31,8 +29,7 @@ gulp.task('lint', () =>
 );
 
 gulp.task('clean', () => del([
-  paths.jsBundle,
-  paths.cssBundle
+  paths.distDir
 ]));
 
 gulp.task('build', ['lint', 'clean'], () =>
@@ -45,8 +42,8 @@ gulp.task('watch', () => {
   gulp.watch([paths.allSrcJs, paths.allSrcCss], ['build']);
 });
 
-gulp.task('deploy', ['build'], function() {
-  return gulp.src(path.join(paths.distDir, '/**/*'))
+gulp.task('deploy', ['build'], () => {
+  gulp.src(path.join(paths.distDir, '/**/*'))
     .pipe(ghPages());
 });
 
