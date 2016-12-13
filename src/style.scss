@@ -1,23 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
 $font-stack: 'Inconsolata', monospace;
-$back-color: #fff;
+$back-colour: #ffffff;
+$fore-colour: #2a363b;
 
 body {
   margin: 0;
-  background: $back-color;
+  background: $back-colour;
   background-size: cover;
-}
-
-video#background { 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: 1s opacity;
+  color: $fore-colour;
 }
 
 main {
@@ -32,8 +23,6 @@ main {
   padding: 0;
   font: 2em $font-stack;
   font-size: 4.6vh;
-  color: #fff;
-  mix-blend-mode: exclusion;
 
   li {
     list-style-type: none;
@@ -44,7 +33,7 @@ main {
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: $fore-colour;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -61,10 +50,6 @@ main {
 
   li:hover {
     opacity: 1.0;
-
-    a {
-      color: #f8b195;
-    }
   }
 
 }
