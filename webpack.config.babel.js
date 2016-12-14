@@ -43,7 +43,8 @@ export default {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html'
+      template: 'index.html',
+      cache: false
     }),
 
     new ExtractTextPlugin('style.css', {
