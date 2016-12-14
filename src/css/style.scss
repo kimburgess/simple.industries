@@ -24,13 +24,22 @@ main {
 }
 
 #graphic {
-  margin-right: 4em;
-  margin-right: 4.5vh;
+  display: none;
+}
 
-  img {
-    height: 15em;
-    height: 31vh;
+@media all and (min-width:481px) {
+
+  #graphic {
+    display: block;
+    margin-right: 4em;
+    margin-right: 4.5vh;
+
+    img {
+      height: 15em;
+      height: 31vh;
+    }
   }
+
 }
 
 #presence-links {
