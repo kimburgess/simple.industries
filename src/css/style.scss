@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
+@import 'transition';
+@import 'smooth-text';
+@import 'fade-in';
+
 $font-stack: 'Inconsolata', monospace;
 $back-colour: #ffffff;
 $fore-colour: #2a363b;
@@ -11,22 +15,12 @@ body {
   color: $fore-colour;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 main {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  animation: fadeIn 3s ease 0.5s forwards;
+  @include fade-in(3s);
 }
 }
 
@@ -41,36 +35,29 @@ main {
     padding: 8%;
     padding: 2vh;
     margin: 0;
-    -webkit-transition: 0.4s ease;
-    -moz-transition: 0.4s ease;
-    -ms-transition: 0.4s ease;
-    -o-transition: 0.4s ease;
-    transition: 0.4s ease;
+    @include transition(opacity, 0.4s, ease);
   }
 
   a {
     text-decoration: none;
     color: $fore-colour;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-shadow: rgba(0,0,0,.01) 0 0 1px;
+    @include smooth-text;
 
     &:before {
       content: '/';
     }
   }
 
-}
+  &:hover {
 
-#presence-links:hover {
+    li {
+      opacity: 0.5;
+    }
 
-  li {
-    opacity: 0.5;
-  }
+    li:hover {
+      opacity: 1.0;
+    }
 
-  li:hover {
-    opacity: 1.0;
   }
 
 }
