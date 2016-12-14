@@ -37,6 +37,11 @@ export default {
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!sass')
+      },
+      {
+        test: /\.svg/,
+        loader: 'url-loader',
+        include: [/media/]
       }
     ]
   },
