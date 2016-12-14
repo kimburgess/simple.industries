@@ -11,11 +11,23 @@ body {
   color: $fore-colour;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 main {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: fadeIn 3s ease 0.5s forwards;
+}
 }
 
 #presence-links {
